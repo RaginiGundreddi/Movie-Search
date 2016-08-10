@@ -1,0 +1,95 @@
+<html ng-app="movieApp">
+<head>
+    
+    <meta charset="utf-8">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    
+    <title>Search Movie Database</title>
+
+    <!-- build:css styles/main.css -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- endbuild -->
+    
+</head>
+    <body>
+        
+        
+            
+    <div class="container" ng-controller="movieController">
+
+      <h1>Search for your favourite movie....</h1>
+      <div class="form-group">
+        <label for="moviename">Enter the Moviename </label>
+        <input type="text" id="moviename" class="form-control" ng-model="moviename" name="moviename" uib-typeahead="hint for hint in hints | filter:$viewValue | limitTo:8" ng-change="hinting()" ng-keypress="startSearch($event)">
+      </div>
+
+      
+      <button class="btn btn-default" ng-click="searching()">Search</button>
+
+      <br><br>
+            
+
+                <div class="row row-content" ng-if="showSearch">
+            
+            <div class="col-xs-12" ng-if="!showDetails">
+                <h3>{{message}}</h3>
+
+            </div>
+            
+            <div class="col-xs-12" ng-if="showDetails">
+                  
+        
+                <ul class="media-list">
+                <li class="media" ng-repeat="movie in movies ">
+                  
+                    <div class="media-left media-middle">
+                        <a>
+                        <img class="media-object img-thumbnail"
+                         ng-src={{movie.Poster}} alt="Picture not available">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading" style="color:pink">{{movie.Title}}</h3>
+                         <p style="color:pink">Year of Release:{{movie.Year}}</p>
+                         <p style="color:pink">IMDB ID:{{movie.imdbID}}</p>
+                         <p style="color:pink">Type:{{movie.Type}}</p>
+                        
+                        
+                    </div>
+                <br>
+                </li>
+
+            </ul>
+        
+            </div>
+        </div>
+   
+        </div>
+        
+        
+        
+        <!-- build:js scripts/main.js -->
+        <script src="../bower_components/angular/angular.min.js"></script>
+       
+         <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../bower_components/angular-resource/angular-resource.js"></script>
+
+        <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    
+
+        
+    
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers.js"></script>
+        <script src="scripts/services.js"></script>
+
+        <!-- endbuild -->
+        
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<html ng-app="movieApp">
+<head>
+    
+    <meta charset="utf-8">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    
+    <title>Search Movie Database</title>
+
+    <link rel="stylesheet" href="styles/main.1867351066b6ac6a7599.css">
+    
+</head>
+    <body>
+        
+        
+            
+    <div class="container" ng-controller="movieController">
+
+      <h1>Search for your favourite movie....</h1>
+      <div class="form-group">
+        <label for="moviename">Enter the Moviename </label>
+        <input type="text" id="moviename" class="form-control" ng-model="moviename" name="moviename" uib-typeahead="hint for hint in hints | filter:$viewValue | limitTo:8" ng-change="hinting()" ng-keypress="startSearch($event)">
+      </div>
+
+      
+      <button class="btn btn-default" ng-click="searching()">Search</button>
+
+      <br><br>
+            
+
+                <div class="row row-content" ng-if="showSearch">
+            
+            <div class="col-xs-12" ng-if="!showDetails">
+                <h3>{{message}}</h3>
+
+            </div>
+            
+            <div class="col-xs-12" ng-if="showDetails">
+                  
+        
+                <ul class="media-list">
+                <li class="media" ng-repeat="movie in movies ">
+                  
+                    <div class="media-left media-middle">
+                        <a>
+                        <img class="media-object img-thumbnail"
+                         ng-src={{movie.Poster}} alt="Picture not available">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading" style="color:pink">{{movie.Title}}</h3>
+                         <p style="color:pink">Year of Release:{{movie.Year}}</p>
+                         <p style="color:pink">IMDB ID:{{movie.imdbID}}</p>
+                         <p style="color:pink">Type:{{movie.Type}}</p>
+                        
+                        
+                    </div>
+                <br>
+                </li>
+
+            </ul>
+        
+            </div>
+        </div>
+   
+        </div>
+        
+        
+        
+        <script src="scripts/main.b68b296daae9538bbe90.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "Movie Search",
+  "homepage": "https://github.com/RaginiGundreddi/Movie-Search",
+  "authors": [
+    "gundreddiragini <gundreddiragini@gmail.com>"
+  ],
+  "description": "Search for your favourite movie",
+  "main": "index.html",
+  "keywords": [
+    "Movie",
+    "Search"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular-animate": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular": "^1.5.8",
+    "angular-bootstrap": "^2.0.1",
+    "bootstrap": "^3.3.7"
+  }
+}
