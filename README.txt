@@ -1,6 +1,6 @@
 Movie Search Application
 
-Application for searching a movie databse.
+Application for searching a movie database.
 
 This application is used for searching the list of movies that are available in OMDB api.
 
