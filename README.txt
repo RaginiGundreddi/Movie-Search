@@ -1,4 +1,4 @@
-#Movie Search Application
+Movie Search Application
 
 Application for searching a movie databse.
 
