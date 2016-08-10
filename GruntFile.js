@@ -2,20 +2,19 @@
 
 module.exports = function (grunt) {
 
-  // Time how long tasks take. Can help when optimizing build times
+  
   require('time-grunt')(grunt);
 
-  // Automatically load required Grunt tasks
+  
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin'
   });
-  //require('jit-grunt')(grunt);
+  
 
-  // Define the configuration for all the tasks
   grunt.initConfig({
           pkg: grunt.file.readJSON('package.json'),
 
-    // Make sure code styles are up to par and there are no obvious mistakes
+  
      jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -35,7 +34,7 @@ module.exports = function (grunt) {
             dest: 'dist'
         }
     },
-      // Concat
+  
     concat: {
         options: {
             separator: ';'
@@ -88,17 +87,10 @@ module.exports = function (grunt) {
       fonts: {
           files:[
               {
-                  //for bootstrap fonts
+                  
                     expand: true,
                     dot: true,
                     cwd: 'bower_components/bootstrap/dist',
-                    src: ['fonts/*.*'],
-                    dest: 'dist'
-                }, {
-                    //for font-awesome
-                    expand: true,
-                    dot: true,
-                    cwd: 'bower_components/font-awesome',
                     src: ['fonts/*.*'],
                     dest: 'dist'
                 }
@@ -128,7 +120,7 @@ module.exports = function (grunt) {
     connect: {
       options: {
         port: 9000,
-        // Change this to '0.0.0.0' to access the server from outside.
+        
         hostname: 'localhost',
         livereload: 35729
       },
